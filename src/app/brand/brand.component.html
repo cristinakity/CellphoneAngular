@@ -1,0 +1,22 @@
+<h1>Brands 
+    <button class="btn btn-success" [routerLink]="['/brand/add']" >Agregar</button>
+</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Brand</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let brand of brands">
+      <th scope="row">{{brand.brandId}}</th>
+      <td>{{brand.name}}</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="edit(brand)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="delete(brand)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
