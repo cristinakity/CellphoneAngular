@@ -21,9 +21,14 @@ export class AddBrandComponent implements OnInit {
   }
 
   save() { 
-    this.brandService.post(this.brand).subscribe(brand => {
-      alert('Brand added successfully!');
-      this.router.navigate(['/brand']);
+    this.brandService.post(this.brand).subscribe(response => {
+      console.log(response);
+      if(response.status == 201) {
+        alert('Brand added successfully!');
+        this.router.navigate(['/brand']);
+      }else{
+        alert('Error: ' + response.status + '\nNo se pudo agregar el Brand');
+      }
     });
   }
 }

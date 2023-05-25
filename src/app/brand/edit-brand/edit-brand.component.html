@@ -1,8 +1,11 @@
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <h1>Brand</h1>
-        <form #brandForm="ngForm" (ngSubmit)="save()">
-            <input type="hidden" name="brandId" [(ngModel)]="brand.brandId" />
+        <form #brandForm="ngForm" (ngSubmit)="update()">
+            <div class="form-group">
+                <label for="brandId">Id</label>
+                <input type="number" name="brandId" [(ngModel)]="brand.brandId" class="form-control" readonly required disabled="disabled" />
+            </div>
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" name="name" [(ngModel)]="brand.name" class="form-control" required />

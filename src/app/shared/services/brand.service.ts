@@ -11,23 +11,23 @@ export class BrandService {
   constructor(private httpClient: HttpClient) { }
 
   get() {
-    return this.httpClient.get<Brand[]>(this.apiUrl);
+    return this.httpClient.get<Brand[]>(this.apiUrl, { observe: 'response' });
   }
 
   getById(brandId: number) {
-    return this.httpClient.get<Brand>(`${this.apiUrl}/${brandId}`);
+    return this.httpClient.get<Brand>(`${this.apiUrl}/${brandId}`, { observe: 'response' });
   }
 
   delete(brandId: number) {
-    return this.httpClient.delete(`${this.apiUrl}/${brandId}`);
+    return this.httpClient.delete(`${this.apiUrl}/${brandId}`, { observe: 'response' });
   }
 
   post(brand: Brand) {
-    return this.httpClient.post(this.apiUrl, brand);
+    return this.httpClient.post(this.apiUrl, brand, { observe: 'response' });
   }
 
   put(brand: Brand) {
-    return this.httpClient.put(`${this.apiUrl}`, brand);
+    return this.httpClient.put(`${this.apiUrl}`, brand, { observe: 'response' });
   }
 
 }

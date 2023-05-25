@@ -12,11 +12,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let brand of brands">
-      <th scope="row">{{brand.brandId}}</th>
+      <td>{{brand.brandId}}</td>
       <td>{{brand.name}}</td>
       <td>
-        <button type="button" class="btn btn-primary" (click)="edit(brand)">Edit</button>
-        <button type="button" class="btn btn-danger" (click)="delete(brand)">Delete</button>
+        <button type="button" class="btn btn-primary" (click)="edit(brand.brandId)">Edit</button>
+        <button type="button" class="btn btn-danger" (click)="delete(brand.brandId)">Delete</button>
       </td>
     </tr>
   </tbody>

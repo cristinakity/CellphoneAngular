@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrandComponent } from './brand/brand.component';
 import { HomeComponent } from './home/home.component';
 import { AddBrandComponent } from './brand/add-brand/add-brand.component';
+import { EditBrandComponent } from './brand/edit-brand/edit-brand.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -10,7 +11,8 @@ const routes: Routes = [
   { path: 'brand', 
     children: [
       { path: '', component: BrandComponent },
-      { path: 'add', component: AddBrandComponent }
+      { path: 'add', component: AddBrandComponent },
+      { path: ':id', component: EditBrandComponent }
     ] 
   },
 ];
